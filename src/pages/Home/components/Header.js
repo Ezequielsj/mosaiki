@@ -1,20 +1,27 @@
 import React from 'react';
-import '../style.css';
+//import '../style.css';
+import { makeStyles } from '@mui/styles';
+import AppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
+
+const useStyles = makeStyles({
+
+});
 
 function Header() {
     return (
-        <header className="header">
-            <div className='toolbar'>
+        <AppBar> 
+            <Toolbar>
                 <div>
                     <a href="/">Mosaiki</a>
+                    <input type="text"></input>
                 </div>
                 <div>
-                    <button>Novo post</button>
                     <span>img1</span>
                     <span>img1.2</span>
                 </div>
-            </div>
-        </header>
+            </Toolbar>
+        </AppBar>
     )
 }
 
