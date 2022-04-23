@@ -8,7 +8,7 @@ const useStyles = makeStyles((theme) => ({
 
         //padding: theme.spacing(0),
         width: 275,
-        height: 100,
+        height: 100, 
     },
 
 }));
@@ -25,15 +25,15 @@ const useStyles = makeStyles((theme) => ({
 
 });*/
 
-function NavBar() {
+function NavBar2() {
     const classes = useStyles(); 
 
     return(
         <Paper className={classes.root}>
-            NavBar
+            NavBar2
         </Paper>
     )
 }
 
 
-export default NavBar;
+export default NavBar2;

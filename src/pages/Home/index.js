@@ -5,8 +5,11 @@ import { makeStyles } from '@mui/styles';
 import Header from './components/Header';
 import Feed from './components/Feed';
 import NavBar from './components/NavBar';
+import NavBar2 from './components/NavBar2';
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
+
+import NewPost from './components/NewPost';
 
 const useStyles = makeStyles({
     root: {
@@ -35,7 +38,11 @@ function Home() {
                 <Container maxWidth="xl">
                     <Box display="flex">
                         <NavBar />
-                        <Feed /> 
+                      <div>
+                        <NewPost />
+                        <Feed />
+                     </div>
+                        <NavBar2 />
                     </Box>
                 </Container>
                     
