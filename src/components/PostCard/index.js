@@ -7,8 +7,12 @@ import CardActions from '@mui/material/CardActions';
 import CardActionsAre from '@mui/material/CardActions';
 import Typography from '@mui/material/Typography';
 import Avatar from "@mui/material/Avatar";
-
-
+import IconButton from '@mui/material/IconButton';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import LightbulbSharpIcon from '@mui/icons-material/LightbulbSharp';
+import MessageSharpIcon from '@mui/icons-material/MessageSharp';
+import MoreVertIcon from '@mui/icons-material/MoreVert';
+import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -16,6 +20,7 @@ const useStyles = makeStyles((theme) => ({
         marginLeft: 10,
         marginRight: 10,
         maxWidth: 800,
+        
     },
     subheader: {
         display: 'flex',
@@ -25,13 +30,34 @@ const useStyles = makeStyles((theme) => ({
         paddingRight: 2,
     },
     image: {
-        height: '100%',
+        height: 300,
         width: '100%',
-        maxWidth: '100%' 
+        maxWidth: '100%', 
+        
     },
     content: {
         padding: 0,
+        
+    },
+
+    bigheader: {
+        display: 'flex',
+        alignItems: 'center',
+    
+    },
+
+    points: {
+        marginLeft: 'auto',
+        marginRight: 15,
+
+    },
+
+    CardActions:{
+        marginLeft: 'auto',
     }
+       
+
+
 }))
 
 function PostCard({ post }) {
@@ -39,32 +65,78 @@ function PostCard({ post }) {
 
     return (
         <Card className={classes.root}>
-            <CardHeader
-                avatar={<Avatar disableSpacing src={post.author.avatar} />}
-                title={<Typography variant="h6">{post.title}</Typography>}
-                subheader={
-            <div className={classes.subheader}>
-                <Typography variant="caption" className={classes.caption}>
-                    {'Criado por:'}
-                </Typography>
-                <Typography variant="subtitle2" className={classes.caption}>
-                    {post.author.name}
-                </Typography>
-                <Typography variant="caption" className={classes.caption}>
-                    {post.date}
-                </Typography>    
+            <div className={classes.bigheader}>
+                <CardHeader
+                
+                    avatar={<Avatar src={post.author.avatar} />}
+                    title={<Typography variant="h6">{post.title}</Typography>}
+                    subheader={
+                <div className={classes.subheader}>
+                    <Typography variant="caption" className={classes.caption}>
+                        {'Criado por:'}
+                    </Typography>
+                    <Typography variant="subtitle2" className={classes.caption}>
+                        {post.author.name}
+                    </Typography>
+
+                    <Typography variant="caption" className={classes.caption}>
+                        {post.date}
+                    </Typography>
+                </div>
+                    }
+                />
+                <div className={classes.points}>
+                <IconButton aria-label="like" >
+                        <MoreHorizIcon />
+                    </IconButton> 
+                </div>
             </div>
-                }
-            />
             
             <CardContent className={classes.content}>
                 <CardActionsAre >
                     <img src={post.image} className={classes.image} alt="img"/>
                 </CardActionsAre>
             </CardContent >
-            <CardActions disableSpacing>
+            <CardActions disableSpacing className={classes.CardActions}>
+                <IconButton aria-label="like">
+                    <FavoriteIcon />
+                    <Typography style={{cursor: 'pointer'}}
+                    color="textSecondary"
+                    variant="body2"
+                    >
+                        {'10'}
+                    </Typography>
+                </IconButton>
+
+                <IconButton aria-label="like">
+                    <LightbulbSharpIcon />
+                    <Typography style={{cursor: 'pointer'}}
+                    color="textSecondary"
+                    variant="body2"
+                    >
+                        {'10'}
+                    </Typography>
+                </IconButton>
+
+                <IconButton aria-label="like">
+                    <MessageSharpIcon />
+                    <Typography style={{cursor: 'pointer'}}
+                    color="textSecondary"
+                    variant="body2"
+                    >
+                        {'10'}
+                    </Typography>
+                </IconButton>
+
+                <IconButton aria-label="like">
+                    <MoreVertIcon />
+                </IconButton>
+                
+
+            
 
             </CardActions>
+            
 
         </Card>
     )
