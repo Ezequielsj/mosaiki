@@ -7,6 +7,7 @@ import CardActions from '@mui/material/CardActions';
 import CardActionsAre from '@mui/material/CardActions';
 import Typography from '@mui/material/Typography';
 import Avatar from "@mui/material/Avatar";
+
 import IconButton from '@mui/material/IconButton';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import LightbulbSharpIcon from '@mui/icons-material/LightbulbSharp';
@@ -16,44 +17,52 @@ import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 
 const useStyles = makeStyles((theme) => ({
     root: {
+
         marginBottom: 10,
         marginLeft: 10,
         marginRight: 10,
         maxWidth: 800,
-        
+
+
     },
     subheader: {
         display: 'flex',
-        alignItems: 'center'
+
     },
     caption: {
-        paddingRight: 2,
+        paddingRight: 10
     },
+
     image: {
         height: 300,
         width: '100%',
-        maxWidth: '100%', 
+        maxWidth: '100%'
         
+
+    
     },
-    content: {
-        padding: 0,
-        
+    Content: {       
+
+        padding: 0
     },
 
     bigheader: {
         display: 'flex',
-        alignItems: 'center',
+        alignItems: 'center'
     
     },
 
-    points: {
-        marginLeft: 'auto',
-        marginRight: 15,
 
+    MoreHoriz: {
+        marginLeft: 'auto',
+        padding: '1%',
     },
 
     CardActions:{
-        marginLeft: 'auto',
+        display: 'flex',
+        
+
+
     }
        
 
@@ -65,9 +74,9 @@ function PostCard({ post }) {
 
     return (
         <Card className={classes.root}>
+            
             <div className={classes.bigheader}>
                 <CardHeader
-                
                     avatar={<Avatar src={post.author.avatar} />}
                     title={<Typography variant="h6">{post.title}</Typography>}
                     subheader={
@@ -85,18 +94,21 @@ function PostCard({ post }) {
                 </div>
                     }
                 />
-                <div className={classes.points}>
+                
+                <div className={classes.MoreHoriz}>
                 <IconButton aria-label="like" >
                         <MoreHorizIcon />
-                    </IconButton> 
+                </IconButton>
                 </div>
             </div>
             
-            <CardContent className={classes.content}>
+            <CardContent className={classes.Content}>
                 <CardActionsAre >
                     <img src={post.image} className={classes.image} alt="img"/>
                 </CardActionsAre>
             </CardContent >
+
+
             <CardActions disableSpacing className={classes.CardActions}>
                 <IconButton aria-label="like">
                     <FavoriteIcon />
@@ -104,17 +116,17 @@ function PostCard({ post }) {
                     color="textSecondary"
                     variant="body2"
                     >
-                        {'10'}
+                        {'3000'}
                     </Typography>
                 </IconButton>
 
                 <IconButton aria-label="like">
-                    <LightbulbSharpIcon />
+                   <LightbulbSharpIcon />
                     <Typography style={{cursor: 'pointer'}}
                     color="textSecondary"
                     variant="body2"
                     >
-                        {'10'}
+                        {'1040'}
                     </Typography>
                 </IconButton>
 
@@ -124,7 +136,7 @@ function PostCard({ post }) {
                     color="textSecondary"
                     variant="body2"
                     >
-                        {'10'}
+                        {'1998'}
                     </Typography>
                 </IconButton>
 

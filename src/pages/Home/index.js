@@ -18,11 +18,11 @@ const useStyles = makeStyles({
     },
     main: {
         height: '100vh',
-        paddingTop: 15,
+        
     },
 
     toolbar : {
-        minHeight: 64,
+        minHeight: 80,
         
         
     }

@@ -36,7 +36,7 @@ function PostButton({ post }) {
     return (
         <Card className={classes.root}>
             <CardHeader
-                avatar={<Avatar disableSpacing src={post.author.avatar} />}
+                avatar={<Avatar src={post.author.avatar} />}
             />
             <Button variant="outlined" color="primary" className={classes.button}>Qual problema você quer resolver?</Button>
 

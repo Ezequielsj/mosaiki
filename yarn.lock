@@ -1031,7 +1031,7 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
-"@babel/runtime@^7.4.4":
+"@babel/runtime@^7.4.4", "@babel/runtime@^7.7.6":
   version "7.17.9"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.17.9.tgz#d19fbf802d01a8cb6cf053a64e472d42c434ba72"
   integrity sha512-lSiBBvodq29uShpWGNbgFdKYNiFDo5/HIYsaCEY9ff4sb10x9jizo2+pRrSyF4jKZCXqgzuqBOQKbUm90gQwJg==
@@ -2283,6 +2283,11 @@
   dependencies:
     "@typescript-eslint/types" "5.17.0"
     eslint-visitor-keys "^3.0.0"
+
+"@ungap/url-search-params@^0.1.4":
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/@ungap/url-search-params/-/url-search-params-0.1.4.tgz#727e9b4c811beaa6be6d7e4cc0516663c884cfd0"
+  integrity sha512-RLwrxCTDNiNev9hpr9rDq8NyeQ8Nn0X1we4Wu7Tlf368I8r+7hBj3uObhifhuLk74egaYaSX5nUsBlWz6kjj+A==
 
 "@webassemblyjs/ast@1.11.1":
   version "1.11.1"
@@ -4789,6 +4794,13 @@ he@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/he/-/he-1.2.0.tgz#84ae65fa7eafb165fddb61566ae14baf05664f0f"
   integrity sha512-F/1DnUGPopORZi0ni+CvrCgHQ5FyEAHRLSApuYWMmrbSwoN2Mn/7k+Gl38gJnR7yyDZk6WLXwiGod1JOWNDKGw==
+
+history@^5.2.0:
+  version "5.3.0"
+  resolved "https://registry.yarnpkg.com/history/-/history-5.3.0.tgz#1548abaa245ba47992f063a0783db91ef201c73b"
+  integrity sha512-ZqaKwjjrAYUYfLG+htGaIIZ4nioX2L70ZUMIFysS3xvBsSG4x/n1V6TXV3N8ZYNuFGlDirFg32T7B6WOUPDYcQ==
+  dependencies:
+    "@babel/runtime" "^7.7.6"
 
 hoist-non-react-statics@^3.3.1, hoist-non-react-statics@^3.3.2:
   version "3.3.2"
@@ -7429,6 +7441,30 @@ react-refresh@^0.11.0:
   version "0.11.0"
   resolved "https://registry.yarnpkg.com/react-refresh/-/react-refresh-0.11.0.tgz#77198b944733f0f1f1a90e791de4541f9f074046"
   integrity sha512-F27qZr8uUqwhWZboondsPx8tnC3Ct3SxZA3V5WyEvujRyyNv0VYPhoBg1gZ8/MV5tubQp76Trw8lTv9hzRBa+A==
+
+react-router-dom@^0.0.0-experimental-compat.6:
+  version "0.0.0-experimental-compat.6"
+  resolved "https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-0.0.0-experimental-compat.6.tgz#edb600761b3255bb18442b1f795ad7a111e0afa9"
+  integrity sha512-d6lm65oDftoc62hmHNRg7P4NDH/Vj4F8hV3T4T4w9/y7Me/GEuZD0ZE91GssIJUxW8WvtIvn+Xm8QHXOEWtAYg==
+  dependencies:
+    history "^5.2.0"
+    react-router "0.0.0-experimental-compat.6"
+
+react-router-native@^0.0.0-experimental-compat.6:
+  version "0.0.0-experimental-compat.6"
+  resolved "https://registry.yarnpkg.com/react-router-native/-/react-router-native-0.0.0-experimental-compat.6.tgz#ef93058b66e23b4ef859275faa4b982ef596e976"
+  integrity sha512-e0lhsO0XfOHoyxvZ/zDs+ECiCjw1VxGWOdL3ZmmXTqPXM67KUfhqLxWCEZt0hPHjgu9Ny/uI4+2lTYyL2IRckQ==
+  dependencies:
+    "@ungap/url-search-params" "^0.1.4"
+    history "^5.2.0"
+    react-router "0.0.0-experimental-compat.6"
+
+react-router@0.0.0-experimental-compat.6, react-router@^0.0.0-experimental-compat.6:
+  version "0.0.0-experimental-compat.6"
+  resolved "https://registry.yarnpkg.com/react-router/-/react-router-0.0.0-experimental-compat.6.tgz#211a4d1409d8b2a5c91553bea86b5d79cfb434e9"
+  integrity sha512-A7/lT5QCsANHlMBRK++SsCJRX+s3QnqZd3d2E8vnYHP14G+YdAHynzzFJBBUNwyINl1lfggxg0E2iy+qOfyPLA==
+  dependencies:
+    history "^5.2.0"
 
 react-scripts@5.0.0:
   version "5.0.0"
