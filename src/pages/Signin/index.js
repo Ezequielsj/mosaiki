@@ -9,8 +9,8 @@ import TextField from '@mui/material/TextField';
 import { Button } from '@mui/material';
 import Link from '@mui/material/Link';
 import { textAlign } from '@mui/system';
-
-
+import { useNavigate } from 'react-router';
+import axios from 'axios';
 
 const useStyles = makeStyles((createTheme) => ({
     root: {
@@ -26,15 +26,19 @@ const useStyles = makeStyles((createTheme) => ({
      },
 
      form: {
-         marginRight: '8%',
-         marginLeft: '16%', 
+         marginRight: '3%',
+         marginLeft: '6%', 
         
      },
 
      image: {
          padding: '16',
          textAlign: 'center',
-         
+     },
+
+     senha: {
+         paddingRight: 5,
+
      }
 
 
@@ -42,6 +46,17 @@ const useStyles = makeStyles((createTheme) => ({
 
 function SignIn() {
     const classes = useStyles(); 
+    const navigate = useNavigate(); 
+
+    function handleSignIn () {
+        // chamada a api da nossa aplicação
+        // se retorno ok, direciona para home
+        // se não exibe mensagem para o usuario
+
+        console.log('click')
+        
+        
+    }
 
     return (
         <Grid container className={classes.root}>
@@ -109,17 +124,19 @@ function SignIn() {
                         
                         variant='contained'
                         color='primary'
-                        fullWidth>
+                        fullWidth
+                        onClick={handleSignIn}
+                        >
                             Entrar
                         </Button>
                         </div>
 
                         <Grid container>
-                            <Grid item>
+                            <Grid item className={classes.senha}>
                                 <Link>Esqueceu sua senha?</Link>
                             </Grid>
                             <Grid item>
-                                <Link>Não tem uma conta? registrar</Link>
+                                <Link>Não tem uma conta? registrar!</Link>
                             </Grid>
                             
 

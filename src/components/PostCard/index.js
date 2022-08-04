@@ -2,11 +2,12 @@ import React from "react";
 import { makeStyles } from '@mui/styles';
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
-import CardContent from '@mui/material/CardContent';
+//import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
-import CardActionsAre from '@mui/material/CardActions';
+import CardActionArea from '@mui/material/CardActionArea';
 import Typography from '@mui/material/Typography';
 import Avatar from "@mui/material/Avatar";
+import Paper from '@mui/material/Paper';
 
 import IconButton from '@mui/material/IconButton';
 import FavoriteIcon from '@mui/icons-material/Favorite';
@@ -14,16 +15,15 @@ import LightbulbSharpIcon from '@mui/icons-material/LightbulbSharp';
 import MessageSharpIcon from '@mui/icons-material/MessageSharp';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
+import { margin } from "@mui/system";
 
 const useStyles = makeStyles((theme) => ({
     root: {
-
+        
         marginBottom: 10,
         marginLeft: 10,
         marginRight: 10,
-        maxWidth: 800,
-
-
+        maxWidth: 750,
     },
     subheader: {
         display: 'flex',
@@ -34,22 +34,15 @@ const useStyles = makeStyles((theme) => ({
     },
 
     image: {
-        height: 300,
+        height: '100%',
         width: '100%',
         maxWidth: '100%'
-        
-
-    
     },
-    Content: {       
 
-        padding: 0
-    },
 
     bigheader: {
         display: 'flex',
         alignItems: 'center'
-    
     },
 
 
@@ -60,9 +53,6 @@ const useStyles = makeStyles((theme) => ({
 
     CardActions:{
         display: 'flex',
-        
-
-
     }
        
 
@@ -73,6 +63,8 @@ function PostCard({ post }) {
     const classes = useStyles();
 
     return (
+        
+        
         <Card className={classes.root}>
             
             <div className={classes.bigheader}>
@@ -102,12 +94,11 @@ function PostCard({ post }) {
                 </div>
             </div>
             
-            <CardContent className={classes.Content}>
-                <CardActionsAre >
+            
+                <CardActionArea>
                     <img src={post.image} className={classes.image} alt="img"/>
-                </CardActionsAre>
-            </CardContent >
-
+                </CardActionArea>
+           
 
             <CardActions disableSpacing className={classes.CardActions}>
                 <IconButton aria-label="like">
