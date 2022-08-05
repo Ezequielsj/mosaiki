@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {useState} from 'react';
+import Typography from '@mui/material/Typography';
 import { makeStyles } from '@mui/styles';
-import { Typography } from '@mui/material';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Avatar from '@mui/material/Avatar';
@@ -10,9 +10,11 @@ import { Button } from '@mui/material';
 import Link from '@mui/material/Link';
 import { textAlign } from '@mui/system';
 import { useNavigate } from 'react-router';
-import axios from 'axios';
+import FormHelperText from '@mui/material/FormHelperText';
 
-const useStyles = makeStyles((createTheme) => ({
+import authService from '../../services/authService';
+
+const useStyles = makeStyles((Theme) => ({
     root: {
         height: '100vh'
     },
@@ -47,14 +49,24 @@ const useStyles = makeStyles((createTheme) => ({
 function SignIn() {
     const classes = useStyles(); 
     const navigate = useNavigate(); 
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [errorMessage, setErrorMessage] = useState();
 
-    function handleSignIn () {
+    
+
+    async function handleSignIn () {
         // chamada a api da nossa aplicação
         // se retorno ok, direciona para home
         // se não exibe mensagem para o usuario
 
-        console.log('click')
-        
+        try {
+            await authService.signIn(email, password);
+            //200
+            navigate('/')
+        } catch (error) {
+            setErrorMessage(error.response.data.message);
+        }
         
     }
 
@@ -106,6 +118,9 @@ function SignIn() {
                         name='email'
                         autoComplete='email'
                         autoFocus
+                        value={email}
+                        onChange={(event) => setEmail(event.target.value)}
+
                         />
 
                         <TextField
@@ -118,6 +133,8 @@ function SignIn() {
                         type='password'
                         name='password'
                         autoComplete='current-password'
+                        value={password}
+                        onChange={(event) => setPassword(event.target.value)}
                         />
                         <div className={classes.Button}>
                         <Button
@@ -129,7 +146,14 @@ function SignIn() {
                         >
                             Entrar
                         </Button>
+
                         </div>
+                        {
+                             errorMessage &&
+                            <FormHelperText error>
+                                {errorMessage}
+                            </FormHelperText>
+                        }
 
                         <Grid container>
                             <Grid item className={classes.senha}>
@@ -154,28 +178,7 @@ function SignIn() {
 
         </Grid>
         
-        /* <div className={classes.root}>
-            <div className={classes.left}>
-
-                <img src="/images/logoBlack.jpeg" alt="logo" className={classes.img} />
-                <Typography style={{color: '#fff', fontSize: 50, lineHeight: '50px'}}>
-                   <strong>Mosaiki</strong>
-                </Typography>
-
-                <Typography variant="body2" style={{color: 'rgb(255,255,255, 0.7)', marginTop: 30, fontSize: 25, lineHeight: '30px'}}>
-                    Dois pensam melhor do que um, mil pensam melhor do que dois.
-                </Typography>
-            </div>
-
-            <div className={classes.right}>
-                <form className={classes.form}>
-                    <h4>Acesso</h4>
-                    <input type="text" />
-                    <input type="text" />
-
-                </form>
-            </div>
-        </div> */
+      
     )
 }
 

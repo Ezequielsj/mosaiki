@@ -8,6 +8,8 @@ import  { BrowserRouter, Routes, Route, }  from  "react-router-dom" ;
 import SignIn from './pages/Signin';
 import theme from './theme';
 
+import './mock';
+
 function App() {
  
   return (

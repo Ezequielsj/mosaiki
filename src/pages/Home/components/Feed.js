@@ -15,7 +15,7 @@ const posts = [
       author: { 
          id: 1,
          name: 'Leonardo da Vici,',
-         username: 'lucasnhimi',
+         username: 'Ezequielsantos',
          avatar: '/images/avatars/avatar_1.jpeg'
       },
       title: "uma ferramenta pra registrar sentimentos dos alunos",
@@ -29,7 +29,7 @@ const posts = [
         author: { 
            id: 1,
            name: 'Leonardo da Vici',
-           username: 'lucasnhimi',
+           username: 'ezequielsantos',
            avatar: '/images/avatars/avatar_1.jpeg'
         },
         title: "uma ferramenta pra registrar sentimentos dos alunos",
